@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+	 <meta http-equiv="Refresh" content="199" />
+	 <link rel="stylesheet" type="text/css" href="kost.css">
+	<title>kost</title>
+	<style type="text/css">
+		/* Слайдер */
+.slider{
+    max-width: 90%;
+    position: relative;
+    margin: auto;
+    height: 300px;
+}
+/* Картинка масштабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    width: 30%;
+    height: 300px;
+}
+/* Кнопки вперед и назад */
+.slider .previous, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .previous:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/* Анимация слайдов */
+.slider .item {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {
+        opacity: 0.4
+    }
+    to {
+        opacity: 1
+    }
+}
+	</style>
+</head>
+<body bgcolor="#736F6F" >
+	<script type="text/javascript">
+		/* Устанавливаем индекс слайда по умолчанию */
+let slideIndex = 1;
+showSlides(slideIndex);
+
+/* Увеличиваем индекс на 1 — показываем следующий слайд*/
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+
+/* Уменьшает индекс на 1 — показываем предыдущий слайд*/
+function previousSlide() {
+    showSlides(slideIndex -= 1);  
+}
+
+/* Устанавливаем текущий слайд */
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+/* Функция перелистывания */
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("item");
+    
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+  
+  /* Проходим по каждому слайду в цикле for */
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }   
+    slides[slideIndex - 1].style.display = "block"; 
+}
+	</script>
+<header class="masthead">
+<div class="logo">
+	<img src="pngwing.com.png"style="height:150px;width:150px;margin-left:45%;">
+<div class="polaroid">
+            <img src="rost2.jpg"style="position:absolute;width:170px;height:200px;
+            margin-top:-145px;margin-left: 500px;"/>
+            <img src="rost1.jpg" style="position:absolute;width:170px;height:200px;
+            margin-top:-55px;margin-left: 820px;">
+      </div>
+  </div>
+  <h2 class="site-title" style="color:black;">Обо мне</h2><div style="height: 500px;">
+  <img src="silver.jpg" alt="A man and a woman standing in the water of the Oslo fjord." 
+  style="height: 500px;position: absolute;">
+  <div style="position: absolute; margin-bottom:1000px;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20238.552789435016!2d33.97577398060303!3d50.649050738194134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4129c6cc54153b59%3A0xba68cd047abeb806!2z0JHQtdC10LLQviwg0KHRg9C80YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQyNTEy!5e0!3m2!1sru!2sua!4v1621791995545!5m2!1sru!2sua" width="600" height="450" style="border:0; margin-top: 24px;margin-left:24px;" allowfullscreen="" loading="lazy" ></iframe>
+  </div> <p style="position: absolute;margin-left:45%;color:white;width: 55%;">
+  	Место обитания <br><br>Беево - село в Украине, в Роменском районе Сумской области. Население села составляет 701 человек.
+     Орган местного самоуправления - Беивська сельсовет.
+     После ликвидации Липоводолинского района 19 июля 2020 село вошло в Роменськой район.[.<br><br>Но в связи с обстоятельствами я поступил учиться в один из сами красивых городов Украины, город Харьков</p></div>
+</header>
+
+<main id="content" class="main-area">
+  <section class="splash grid">
+    <div class="splash-content">
+      <h2 class="content-title" style="margin-top:10px;">Мои  успехи в учебе</h2>
+      <div>
+       <table border="1" width="1000" align="center" style="margin-left:-100px;">
+          	<tr style="color:black; font-size: 25px;">
+          		<td align="center">Предмет</td>
+          		<td align="center">Преподователь</td>
+          		<td align="center">Оценки</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Архітектура обчислювальних систем</td>
+          		<td align="center">Ломакін О.М.</td>
+          		<td align="center">5</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Дискретна математика</td>
+          		<td align="center">Татарінова О.А.</td>
+          		<td align="center">3</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Нарисна геометрія та комп'ютерна графіка</td>
+          		<td align="center">Матюшенко М.В.</td>
+          		<td align="center">3</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Об'ективно орієноване програмування</td>
+          		<td align="center">Водка О.О.</td>
+          		<td align="center">3</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Диференційні рівняння</td>
+          		<td align="center">Міхлін Ю.В.</td>
+          		<td align="center">3</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Іноземна мова</td>
+          		<td align="center">Вракина В.В.</td>
+          		<td align="center">3</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Правознасвто</td>
+          		<td align="center">Кузьменко О.В.</td>
+          		<td align="center">4</td>
+          	</tr>
+          	<tr>
+          		<td align="center">Фізична культура</td>
+          		<td align="center">Ширяєва С.В.</td>
+          		<td align="center">3</td>
+          	</tr>
+          </table>
+      </div><!-- .splash-text -->
+    </div><!-- .splash-content -->
+  </section><!-- .splash -->
+
+  <section class="buckets grid">
+  	<i style="color:white;margin-bottom: 150px; margin-left:50px;">Краткий экскурс -<br><br><br>
+  		Моя любимая 3D модель <a href="3Dm.html"style="">Kликай</a></i>
+    <ul>
+      <li>
+      	<center>
+        <img src="player.png" alt="" style="height:150px;width:150px;">
+        </center>
+        <div class="bucket">
+          <h3 class="bucket-title">Media_player</h3>
+          <p>- Форсаж<br>- 13 район<br>- Сам у дома<br>- Наруто</p>
+        </div><!-- .bucket -->
+      </li>
+      <li>
+      	<center>
+        <img src="nastr.png" style="height:150px;width:250px;" alt=""></center>
+        <div class="bucket">
+          <h3 class="bucket-title">Настроение</h3>
+          <div>- Xорошее<br>- Pаздражённое<br>- Дружелюбное</div>
+          <ul style="margin-top: 10px;">
+          <img src="kartinka1.png" style="width: 30px;height:30px;">
+          <img src="kartinka2.png" style="width: 30px;height:30px;">
+          <img src="kartinka3.png" style="width: 30px;height:30px;">
+          </ul>
+        </div><!-- .bucket -->
+      </li>
+      <li>
+      	<center>
+        <img src="yin.png" alt="" style="height:150px;width:150px;">
+    </center>
+        <div class="bucket">
+          <h3 class="bucket-title">Цитата о жизни ...</h3>
+          <p>Если хочешь узнать человека, не слушай, что о нём говорят другие, послушай, что он говорит о других...</p>
+        </div><!-- .bucket -->
+      </li>
+    </ul>
+    <div style="background-color:white;height:96%;"><img src="kto.jpg"style="height:150px;width:250px;" ><h3 class="bucket-title">Kраткий экскурс по моим личносным качествам:</h3>
+   &nbsp - Учусь<br>&nbsp - Верный <br>&nbsp- целеустремлённый
+</div>
+  </section>
+
+  <section class="more grid" style="background-color:silver;">
+    <div class="more-content" style="color:#FDFBFB;">
+      <h2 class="content-title">Слайдер<br>Немного ещё...Я и увлечения</h2>
+      <!-- Основной блок слайдера -->
+<div class="slider" style="">
+  
+    <!-- Первый слайд -->
+    <div class="item" style="position: absolute;margin-left:50px;">
+        <img src="dot.jpg" style="float: left;" style="width:200px;">
+        <p style="margin-left:250px;">Counter-Strike: Global Offensive (CS:GO; с англ. — «Контрудар: глобальное наступление») — многопользовательская компьютерная игра, разработанная компаниями Valve и Hidden Path Entertainment. Выпуск игры для персональных компьютеров на операционных системах Windows и macOS, также игровых приставках Xbox 360 и PlayStation 3 состоялся 21 августа 2012 года. Версия игры для Linux была выпущена в 2014 году, а в 2016 году игра, в рамках программы обратной совместимости, стала доступна на Xbox One.</p>
+    </div>
+  
+    <!-- Второй слайд -->
+    <div class="item" style="position: absolute;margin-left:50px;">
+        <img src="fot.jpg" style="width:200px;">
+        <p style="margin-left:250px;margin-top:-300px;">Футбо́л — командный вид спорта, в котором целью является забить мяч в ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем команда соперника. В настоящее время самый популярный и массовый вид спорта в мире.
+        Игрок, играющий в эту игру — футболи́ст.</p>
+    </div>
+  
+    <!-- Третий слайд -->
+    <div class="item" style="position: absolute;">
+        <img src="rost3.jpg" style="margin-left:50px; width:230px;">
+        <p style="margin-top:-300px;margin-left:300px;">
+Меня зовут Ростислав,можно просто Ростик,<br> хочу работать на роботе мечты.<br>
+Пишу свой веб_сайта. Лучшая работа...<br>
+Есть опыт в розработках: в прошых лабах много писал <br>для отличной оценки_(5).<br>
+Темы — разные, очень разные... Лучшие статьи:...,мои..)<br>
+
+Как узнать подробнее о совей оценке?<br> Если есть возможность получить 38 балов за задание,<br> буду очень рад сказать вам спасибо.)
+        </p>
+    </div>
+  
+    <!-- Кнопки-стрелочки -->
+    <a class="previous" onclick="previousSlide()">&#10094;</a>
+    <a class="next" onclick="nextSlide()">&#10095;</a>
+</div>
+    </div><!-- .more-content -->
+  </section><!-- .more -->
+  <section class="twins grid">
+    <div class="twin" >
+      <h2 class="content-title">Контактная информация</h2>
+      <ul style="list-style: none;">
+      	<li>Телефон:&nbsp 0632270453.</li>
+      	<li>Почта:<a href="myakiw1@ukr.net" style="list-style: none;"> &nbsp myakiw1@ukr.net</a></li>
+      	<li>Адрес:<a href="https://goo.gl/maps/SVVxHEcPNqEoZA376"> &nbsp Беёво Липоводолинский район Сумская обл. улица Лесная.</a></li>
+      </ul>
+    </div>
+    <div class="twin">
+      <h2 class="content-title">Соц-сети</h2>
+     <ul >
+      	<li>Инстаграм:<a href="https://instagram.com/__rostifan__?utm_medium=copy_link"> 
+      	&nbsp __rostifan__.
+
+</a></li>
+      	<li>Телеграм:<a href="#">&nbsp @Rostifann</a></li>
+      	<li>Вайбер:&nbsp 0632270453.</li>
+    </div>
+  </section><!-- .twins -->
+</main>
+
+<footer class="colophon grid">
+  <aside>Конец сайта спасибо за внимания: <a href="https://twitter.com" target="_blank" rel="nofollow">я же заслужил 38?)</a>.</aside>
+  <aside>Вопросы задавать на почту: <a href="myakiw1@ukr.net" target="_blank" rel="nofollow">Ростик-котик ожидает...</a>.</aside>
+</footer>
+<script type="text/javascript">
+	document.body.style.height = '500px';
+document.body.addEventListener('click', function(e){
+    var self = this,
+        old_bg = this.style.background;
+    this.style.background = this.style.background=='silver'? 'gold':'silver';
+    setTimeout(function(){
+        self.style.background = old_bg;
+    }, 1000000);
+})
+</script>
+</body>
+</html>
